@@ -13,6 +13,18 @@ def create_slice(index_names,*vargs,**kwargs):
 def fast_index(pd):
     return pd.api.extensions.register_dataframe_accessor("fidx")(FastIndex)
 
+def get_multi_index(df,column_names=[],index_names=[],order=None,names = None,sort=True,name_map_f=None):
+    index_frame = df.index.to_frame()
+    index_frame[column_names] = df[column_names]
+    if order is None:
+        order = column_names + index_names
+    if names is None:
+        names = order
+    if name_map_f is not None:
+        names = list(map(name_map_f,names))
+        
+
+
 # @pd.api.extensions.register_dataframe_accessor("fidx")
 class FastIndex(object):
     def __init__(self, df):
