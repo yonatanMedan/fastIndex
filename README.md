@@ -20,8 +20,10 @@ example usage:
 df = read_csv("data.csv")
 df.set_index(["Age","ID","Country"],inplace=True)
 df.sort_index(inplace=True)
+```
 
-#the magic starts here
+the magic starts here:
+```python
 #to select based on index just type:
 df.fidx.slice(Age=34,ID=234,Country="Spain")
 #you can also enter slices
