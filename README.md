@@ -1,7 +1,7 @@
 # fastIndex
 awesome way to select from pandas multi index and more
 
-**Warning! this repository is on active develoapment!**
+**Warning! this repository is on early develoapment state!**
 
 installation:
 ```
