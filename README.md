@@ -1,6 +1,8 @@
 # fastIndex
 awesome way to select from pandas multi index and more
 
+**Warning! this repository is on active develoapment!**
+
 installation:
 ```
 pip install fastindex
