@@ -1,0 +1,8 @@
+README.md
+setup.py
+fastIndex.egg-info/PKG-INFO
+fastIndex.egg-info/SOURCES.txt
+fastIndex.egg-info/dependency_links.txt
+fastIndex.egg-info/top_level.txt
+fastindex/__init__.py
+fastindex/fastindex.py
