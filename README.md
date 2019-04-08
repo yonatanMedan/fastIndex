@@ -1,5 +1,5 @@
 # fastIndex
-awesome to select from pandas multi index and more
+awesome way to select from pandas multi index and more
 
 installation:
 ```
