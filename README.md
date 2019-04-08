@@ -16,7 +16,7 @@ example usage:
 ```python
 #configuring pandas MultiIndex
 df = read_csv("data.csv")
-df.set_index(["Age","ID","Team"])
+df.set_index(["Age","ID","Country"],inplace=True)
 df.sort_index(inplace=True)
 
 #the magic starts here
