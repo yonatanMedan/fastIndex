@@ -33,5 +33,5 @@ df.fidx.slice(Age=slice(23,25),ID=234,Country="Spain",columns = ["Name"])
 
 #use f_slice to set values
 slc = df.fidx.f_slice(Age=slice(23,25),ID=234,Country="Spain")
-df.loc[slc,"Name] = "Leonardo"
+df.loc[slc,"Name"] = "Leonardo"
 ```
