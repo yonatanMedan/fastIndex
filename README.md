@@ -20,7 +20,7 @@ df.set_index(["Age","ID","Team"])
 df.sort_index(inplace=True)
 
 #the magic starts here
-#to select based on inde just type:
+#to select based on index just type:
 df.fidx.slice(Age=34,ID=234,Country="Spain")
 #you can also enter slices
 df.fidx.slice(Age=slice(23,25),ID=234,Country="Spain")
