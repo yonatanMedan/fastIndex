@@ -18,20 +18,32 @@ example usage:
 ```python
 #configuring pandas MultiIndex
 df = read_csv("data.csv")
-df.set_index(["Age","ID","Country"],inplace=True)
+df.set_index(["Country","City","District","first_name","Age","ID"],inplace=True)
 df.sort_index(inplace=True)
 ```
 
 the magic starts here:
 ```python
-#to select based on index just type:
-df.fidx.slice(Age=34,ID=234,Country="Spain")
-#you can also enter slices
-df.fidx.slice(Age=slice(23,25),ID=234,Country="Spain")
-#and query columns
-df.fidx.slice(Age=slice(23,25),ID=234,Country="Spain",columns = ["Name"])
+#pandas:
+df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
+#with fastindex
+df.fidx.slice(Age=24)
+
+#slices
+#with pandas
+df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),:]
+#fastindex
+df.fidx.slice(Age=slice(23,25),Country="Spain")
+
+
+#query columns
+#pandas 
+df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),["last_name"]]
+
+#fastindex
+df.fidx.slice(Age=slice(23,25),Country="Spain",columns = ["last_name"])
 
 #use f_slice to set values
 slc = df.fidx.f_slice(Age=slice(23,25),ID=234,Country="Spain")
-df.loc[slc,"Name"] = "Leonardo"
+df.loc[slc,"last_name"] = "Leonardo"
 ```
