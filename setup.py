@@ -3,7 +3,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
      name='fastindex',  
-     version='0.0.2',
+     version='0.0.3',
      author="Yonatan Medan",
      author_email="yonatan.medan@gmail.com",
      description="fast pandas selction and indexing",
