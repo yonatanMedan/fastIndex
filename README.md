@@ -12,11 +12,12 @@ configuration:
 ```python
 from fastindex import fast_index
 import pandas as pd
+#expanding pandas with fastindex
 fast_index(pd)
 ```
 example usage:
 ```python
-#configuring pandas MultiIndex
+#setting pandas MultiIndex
 df = read_csv("data.csv")
 df.set_index(["Country","City","District","first_name","Age","ID"],inplace=True)
 df.sort_index(inplace=True)
