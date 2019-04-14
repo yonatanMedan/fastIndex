@@ -24,26 +24,28 @@ df.sort_index(inplace=True)
 
 the magic starts here:
 ```python
-#pandas:
+#basic selection
+#regular pandas:
 df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
 #with fastindex
 df.fidx.slice(Age=24)
 
 #slices
-#with pandas
+#regular pandas
 df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),:]
-#fastindex
+#with fastindex
 df.fidx.slice(Age=slice(23,25),Country="Spain")
 
 
-#query columns
-#pandas 
+#columns
+#regular pandas 
 df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),["last_name"]]
 
-#fastindex
+#with fastindex
 df.fidx.slice(Age=slice(23,25),Country="Spain",columns = ["last_name"])
 
-#use f_slice to set values
+
+#setting values using f_slice:
 slc = df.fidx.f_slice(Age=slice(23,25),ID=234,Country="Spain")
 df.loc[slc,"last_name"] = "Leonardo"
 ```
