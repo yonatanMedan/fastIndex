@@ -36,7 +36,7 @@ df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
 df.fidx.slice(Age=24)
 ```
 
-### slices
+### Ranges
 ---
 **Regular Pandas:**
 ```python
@@ -48,7 +48,7 @@ df.fidx.slice(Age=slice(23,25),Country="Spain")
 ```
 
 
-### columns
+### Selecting columns 
 ---
 **Regular Pandas:**
 ```python
