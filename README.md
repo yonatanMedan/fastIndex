@@ -30,7 +30,7 @@ the magic starts here:
 df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
 ```
 
-### With fastindex
+**With fastindex**
 ```python
 df.fidx.slice(Age=24)
 ```
@@ -59,6 +59,6 @@ df.fidx.slice(Age=slice(23,25),Country="Spain",columns = ["last_name"])
 
 ### setting values using f_slice:
 ```python
-slc = df.fidx.f_slice(Age=slice(23,25),ID=234,Country="Spain")
+slc = df.fidx.f_slice(Age=slice(23,25),Country="Spain")
 df.loc[slc,"last_name"] = "Leonardo"
 ```
