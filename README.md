@@ -3,11 +3,11 @@ awesome way to select from pandas multi index and more
 
 **Warning! this repository is on early develoapment stage!**
 
-installation:
+## installation:
 ```
 pip install fastindex
 ```
-configuration:
+## configuration:
 
 ```python
 from fastindex import fast_index
@@ -15,15 +15,14 @@ import pandas as pd
 #expanding pandas with fastindex
 fast_index(pd)
 ```
-example usage:
+## example usage:
+### setting pandas MultiIndex
 ```python
-#setting pandas MultiIndex
 df = read_csv("data.csv")
 df.set_index(["Country","City","District","first_name","Age","ID"],inplace=True)
 df.sort_index(inplace=True)
 ```
 
-the magic starts here:
 ### Basic Selection
 - **Regular Pandas:**
 ```python
