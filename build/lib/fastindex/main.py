@@ -1,5 +1,5 @@
 import pandas as pd
-
+import pdb
 def get_arg(i,indx,vargs,kwargs):
     if i<len(vargs):
         return vargs[i]
@@ -8,6 +8,8 @@ def get_arg(i,indx,vargs,kwargs):
     
 
 def create_slice(index_names,*vargs,**kwargs):
+    for key in kwargs.keys():
+        assert(key in index_names),"Key {} is not in index".format(key)
     return tuple(map(lambda elm:get_arg(elm[0],elm[1],vargs,kwargs) ,enumerate(index_names)))
 
 def fast_index(pd):
@@ -33,11 +35,6 @@ class FastIndex(object):
     def __init__(self, df):
         self._df = df
 
-    @staticmethod
-    def _validate(obj):
-        pass
-
-
     def f_slice(self,*vargs,**kwargs):
         # return the geographic center point of this DataFrame
         slc = create_slice(self._df.index.names,*vargs,**kwargs)
@@ -48,6 +45,8 @@ class FastIndex(object):
     
     def slice(self,*vargs,columns =slice(None),**kwargs):
         return self._df.loc[self.f_slice(*vargs,**kwargs),columns]
+    
+    
  
 
 
