@@ -16,15 +16,14 @@ import pandas as pd
 fast_index(pd)
 ```
 ## example usage:
-#### setting pandas MultiIndex
+### setting pandas MultiIndex
 ```python
 df = read_csv("data.csv")
 df.set_index(["Country","City","District","first_name","Age","ID"],inplace=True)
 df.sort_index(inplace=True)
 ```
 
-### the magic starts here:
-#### Basic Selection
+### Basic Selection
 - **Regular Pandas:**
 ```python
 df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
@@ -35,7 +34,7 @@ df.loc[(slice(None),slice(None),slice(None),slice(None),24),:]
 df.fidx.slice(Age=24)
 ```
 
-#### Ranges
+### Ranges
 - **Regular Pandas:**
 ```python
 df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),:]
@@ -46,7 +45,7 @@ df.fidx.slice(Age=slice(23,25),Country="Spain")
 ```
 
 
-#### Selecting columns 
+### Selecting columns 
 - **Regular Pandas:**
 ```python
 df.loc[("Spain",slice(None),slice(None),slice(None),slice(23,25)),["last_name"]]
@@ -57,7 +56,7 @@ df.fidx.slice(Age=slice(23,25),Country="Spain",columns = ["last_name"])
 ```
 
 
-#### setting values using f_slice:
+### setting values using f_slice:
 ```python
 slc = df.fidx.f_slice(Age=slice(23,25),Country="Spain")
 df.loc[slc,"last_name"] = "Leonardo"
